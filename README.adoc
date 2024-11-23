@@ -1,0 +1,11 @@
+= Demo TestTemplate & InvocationInterceptor
+
+This demonstrates how to use a JUnit 5 `TestTemplate` in combination with a `InvocationInterceptor` to access the generated parameter.
+
+== Description
+
+We have integration tests that should behave exactly the same, while different providers provide some service to our system under test.
+We don't want to duplicate the tests, but use `TestTemplate` tests instead, which the `AccountFixture` provides the values for.
+
+Now, some providers don't yet support some use-cases, so we disable the corresponding tests with a `@NotYetProvidedBy` annotation.
+But we still want to see those tests marked as skipped, so we know which providers still need to do what.
